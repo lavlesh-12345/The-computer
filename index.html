@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Computer Academy</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Blue 600
+                        secondary: '#1e40af', // Blue 800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for image fallbacks and smooth transitions */
+        .course-card:hover .course-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <span class="font-bold text-2xl text-slate-900 tracking-tight">Tech<span class="text-primary">Nova</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-slate-600 hover:text-primary font-medium transition">Home</a>
+                    <a href="#courses" class="text-slate-600 hover:text-primary font-medium transition">Courses</a>
+                    <a href="#features" class="text-slate-600 hover:text-primary font-medium transition">Why Us</a>
+                    <a href="#about" class="text-slate-600 hover:text-primary font-medium transition">About</a>
+                    <a href="#contact" class="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-full font-medium transition shadow-md shadow-blue-500/30">Enroll Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#home" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md font-medium">Home</a>
+                <a href="#courses" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md font-medium">Courses</a>
+                <a href="#features" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md font-medium">Why Us</a>
+                <a href="#about" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md font-medium">About</a>
+                <a href="#contact" class="block px-3 py-3 mt-2 text-center bg-primary text-white rounded-md font-medium">Enroll Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-20 md:pt-40 md:pb-32 bg-slate-900 relative overflow-hidden flex-grow">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+            <div class="absolute top-40 -left-20 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-medium text-sm mb-6">
+                        <i class="fa-solid fa-star text-yellow-400 mr-1"></i> #1 Coding Academy in 2026
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                        Master the skills to build your <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">digital future.</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 mb-8 max-w-lg mx-auto md:mx-0">
+                        Join TechNova Academy to learn Web Development, Data Science, Python, and more from industry experts. Start your tech journey today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#courses" class="bg-primary hover:bg-blue-500 text-white px-8 py-3.5 rounded-lg font-semibold transition text-center flex items-center justify-center gap-2">
+                            Explore Courses <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3.5 rounded-lg font-semibold transition text-center flex items-center justify-center gap-2">
+                            Talk to an Advisor
+                        </a>
+                    </div>
+                    <div class="mt-10 flex items-center justify-center md:justify-start gap-4 text-slate-400 text-sm">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://ui-avatars.com/api/?name=John+Doe&background=random" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://ui-avatars.com/api/?name=Jane+Smith&background=random" alt="Student">
+                            <img class="w-8 h-8 rounded-full border-2 border-slate-900" src="https://ui-avatars.com/api/?name=Mike+Ross&background=random" alt="Student">
+                        </div>
+                        <p>Over <strong>5,000+</strong> successful graduates</p>
+                    </div>
+                </div>
+                <div class="hidden md:block relative">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students learning coding" class="rounded-2xl shadow-2xl relative z-10 border border-slate-700/50" onerror="this.src='https://via.placeholder.com/800x600?text=Coding+Class'">
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium">Job Placement</p>
+                            <p class="text-lg font-bold text-slate-900">98% Success</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-2">Why Choose TechNova?</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">The Best Environment to Learn and Grow</h3>
+                <p class="text-slate-600 text-lg">We provide a comprehensive learning experience designed to take you from a beginner to an industry-ready professional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Expert Instructors</h4>
+                    <p class="text-slate-600">Learn directly from industry professionals with years of real-world software development experience.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Hands-on Projects</h4>
+                    <p class="text-slate-600">Don't just watch videos. Build real portfolio projects that employers actually want to see.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Recognized Certification</h4>
+                    <p class="text-slate-600">Earn a certificate upon completion to validate your skills to potential employers worldwide.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Career Support</h4>
+                    <p class="text-slate-600">Get resume reviews, interview preparation, and direct referrals to our partner companies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section id="courses" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-2">Our Programs</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Explore Popular Courses</h3>
+                    <p class="text-slate-600 text-lg">Choose from our industry-aligned programs and start building your tech career.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="#" class="text-primary font-semibold hover:text-secondary flex items-center gap-2">
+                        View All Courses <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="course-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Development" class="course-img w-full h-full object-cover transition-transform duration-500" onerror="this.src='https://via.placeholder.com/600x400?text=Web+Development'">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-slate-900">Bestseller</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Frontend & Backend</span>
+                            <div class="flex items-center text-sm text-slate-500 gap-1">
+                                <i class="fa-solid fa-clock"></i> 12 Weeks
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition">Full-Stack Web Development</h4>
+                        <p class="text-slate-600 text-sm mb-6 line-clamp-2">Master HTML, CSS, JavaScript, React, Node.js, and MongoDB. Build complete web applications from scratch.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="font-bold text-lg text-slate-900">$499</div>
+                            <a href="#" class="text-sm font-semibold text-primary hover:text-secondary">Course Details <i class="fa-solid fa-chevron-right text-xs ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Data Science" class="course-img w-full h-full object-cover transition-transform duration-500" onerror="this.src='https://via.placeholder.com/600x400?text=Data+Science'">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-md">Data & AI</span>
+                            <div class="flex items-center text-sm text-slate-500 gap-1">
+                                <i class="fa-solid fa-clock"></i> 16 Weeks
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition">Data Science & Machine Learning</h4>
+                        <p class="text-slate-600 text-sm mb-6 line-clamp-2">Learn Python, Pandas, Scikit-Learn, and basic neural networks. Analyze complex data and build predictive models.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="font-bold text-lg text-slate-900">$599</div>
+                            <a href="#" class="text-sm font-semibold text-primary hover:text-secondary">Course Details <i class="fa-solid fa-chevron-right text-xs ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="UI/UX Design" class="course-img w-full h-full object-cover transition-transform duration-500" onerror="this.src='https://via.placeholder.com/600x400?text=UI+UX+Design'">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold text-pink-600 bg-pink-50 px-2.5 py-1 rounded-md">Design</span>
+                            <div class="flex items-center text-sm text-slate-500 gap-1">
+                                <i class="fa-solid fa-clock"></i> 8 Weeks
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition">UI/UX Design Masterclass</h4>
+                        <p class="text-slate-600 text-sm mb-6 line-clamp-2">Master Figma, user research, wireframing, and prototyping. Design beautiful and functional digital products.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="font-bold text-lg text-slate-900">$349</div>
+                            <a href="#" class="text-sm font-semibold text-primary hover:text-secondary">Course Details <i class="fa-solid fa-chevron-right text-xs ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact -->
+    <section id="contact" class="py-20 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to start your tech career?</h2>
+            <p class="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Join thousands of students who have transformed their lives through our immersive computer classes. Next batch starts soon!
+            </p>
+            
+            <form class="max-w-2xl mx-auto bg-white p-2 rounded-2xl md:rounded-full shadow-2xl flex flex-col md:flex-row gap-2" onsubmit="event.preventDefault(); alert('Thank you for subscribing! An advisor will contact you soon.');">
+                <input type="email" placeholder="Enter your email address" required class="flex-grow px-6 py-4 rounded-xl md:rounded-l-full focus:outline-none focus:ring-2 focus:ring-primary/20 bg-transparent text-slate-900">
+                <button type="submit" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold py-4 px-8 rounded-xl md:rounded-full transition duration-3
